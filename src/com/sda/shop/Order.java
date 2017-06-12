@@ -35,8 +35,6 @@ public class Order implements Serializable {
         return interfaceAdd.operation(a,b);
     }
 
-
-
     // obliczenie wartosc zamowienia przez sumowanie poszczegolnych pozycji
     public double orderValue (List<Position> position) {
 
@@ -44,12 +42,6 @@ public class Order implements Serializable {
         pos = position.stream()
                 .mapToDouble(Position::positValue)
                 .sum();
-
-        /*
-        for (Position p: positionList) {
-            orderSummary = orderSummary + p.positValue();
-        }*/
-
         return pos;
     }
 
